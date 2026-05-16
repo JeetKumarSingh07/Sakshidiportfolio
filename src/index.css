@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-hindi: "Noto Serif Devanagari", "Fraunces", serif;
+
+  --color-paper: #faf6f0;
+  --color-paper-dark: #f2ebdd;
+  --color-ink: #1a1410;
+  --color-ink-soft: #3a2f26;
+  --color-muted: #6b5d4f;
+  --color-line: #e4d9c4;
+  --color-burgundy: #8b1e2d;
+  --color-burgundy-dark: #6b1520;
+  --color-gold: #b8893a;
+  --color-gold-soft: #d4b073;
+}
+
+html, body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  /* Base font size scales fluidly across viewports */
+  font-size: clamp(14px, 0.5vw + 13px, 17px);
+  line-height: 1.6;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(184, 137, 58, 0.06), transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(139, 30, 45, 0.05), transparent 45%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.06 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.font-display { font-family: var(--font-serif); font-optical-sizing: auto; }
+.font-hindi { font-family: var(--font-hindi); }
+
+/* Fluid typography — scales smoothly from phone to ultrawide */
+.text-fluid-hero {
+  font-size: clamp(2.25rem, 5vw + 1rem, 6.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+.text-fluid-hero-sub {
+  font-size: clamp(1.125rem, 1.2vw + 0.9rem, 2.75rem);
+  line-height: 1.15;
+}
+.text-fluid-section {
+  font-size: clamp(1.625rem, 2vw + 1rem, 3.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+.text-fluid-quote {
+  font-size: clamp(1.25rem, 1vw + 1rem, 2rem);
+  line-height: 1.35;
+}
+.text-fluid-pull {
+  font-size: clamp(1.375rem, 1vw + 1.1rem, 2.25rem);
+  line-height: 1.25;
+}
+.text-fluid-stat {
+  font-size: clamp(1.5rem, 1.2vw + 1.2rem, 2.5rem);
+  line-height: 1;
+}
+
+/* Fancy underline for accent words */
+.accent-underline {
+  background-image: linear-gradient(120deg, rgba(139, 30, 45, 0.25) 0%, rgba(184, 137, 58, 0.25) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 38%;
+  background-position: 0 88%;
+  padding: 0 0.1em;
+}
+
+/* Section divider ornament */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-gold);
+}
+.ornament::before,
+.ornament::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-line), transparent);
+}
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Selection */
+::selection {
+  background: rgba(139, 30, 45, 0.25);
+  color: var(--color-ink);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-paper-dark); }
+::-webkit-scrollbar-thumb { background: var(--color-line); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-burgundy); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fadeUp 0.7s ease-out both; }
+
+@keyframes drawLine {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.animate-draw { animation: drawLine 1.2s ease-out 0.3s both; transform-origin: left; }
+
+/* Responsive container helper */
+.container-editorial {
+  width: 100%;
+  max-width: 72rem; /* 1152px */
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+
+@media (min-width: 1536px) {
+  .container-editorial { max-width: 80rem; }
+}
+
+/* Tap target safety for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  a, button { min-height: 40px; }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  body { background: white; }
+  nav, footer, #contact form button { display: none; }
+}
