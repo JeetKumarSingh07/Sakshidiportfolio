@@ -12,8 +12,8 @@ const PROFILE = {
   location: "Bhopal, India",
   email: "sinhasakshi861@gmail.com",
   phone: "+91 6205341597",
-  bio: `I am a Gold Medalist in Journalism & Mass Communication, currently pursuing my Master's in Mass Communication. My work lives at the intersection of reporting, poetry, and political storytelling — from the newsroom floor at Dainik Bhaskar to election campaigns across the Seemanchal belt. I write in Hindi and English, review literature (60+ books and counting), host open mics, and believe that every story — whether breaking news or a quiet poem — deserves a careful voice.`,
-  intro: `Words have been my compass — through newsrooms, campaign trails, literary festivals and open mics. I report, I write, I anchor, I review, and above all, I listen.`,
+  bio: `I am a Gold Medalist in Journalism & Mass Communication, currently pursuing my Master's in Mass Communication. My work lives at the intersection of reporting, poetry, and political storytelling—from the newsroom floor at Dainik Bhaskar to election campaigns across the Seemanchal belt. I write in Hindi and English, review literature (60+ books and counting), host open mics, and believe that every story—whether breaking news or a quiet poem—deserves a careful voice.`,
+  intro: `Words have been my compass—through newsrooms, campaign trails, literary festivals and open mics. I report, I write, I anchor, I review, and above all, I listen.`,
 };
 
 const SOCIALS = {
@@ -30,7 +30,7 @@ const EXPERIENCE = [
     org: "Step Ahead India",
     period: "Present",
     current: true,
-    desc: "Leading content strategy and communication support across digital platforms — crafting narratives, campaign copy, and organisational storytelling.",
+    desc: "Leading content strategy and communication support across digital platforms—crafting narratives, campaign copy, and organisational storytelling.",
   },
   {
     role: "Content Writer & Anchor",
@@ -39,10 +39,10 @@ const EXPERIENCE = [
     desc: "Scripted and anchored digital content; built voice-driven campaigns across social channels.",
   },
   {
-    role: "PR Executive — Seemanchal Region",
+    role: "PR Executive—Seemanchal Region",
     org: "Bihar Election Campaign",
     period: "",
-    desc: "On-ground political PR and campaign communication during the Bihar elections — media coordination, narrative building, regional outreach.",
+    desc: "On-ground political PR and campaign communication during the Bihar elections—media coordination, narrative building, regional outreach.",
   },
   {
     role: "Special Correspondent Trainee",
@@ -65,7 +65,7 @@ const EDUCATION = [
     badge: "Ongoing",
   },
   {
-    degree: "BJMC — Bachelor of Journalism & Mass Communication",
+    degree: "BJMC—Bachelor of Journalism & Mass Communication",
     school: "Gold Medalist",
     badge: "🏅 Gold Medal",
   },
@@ -429,11 +429,11 @@ function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-ink)]/30 via-transparent to-transparent" />
             </div>
 
-            {/* Floating quote card — hide on very small screens */}
+            {/* Floating quote card—hide on very small screens */}
             <div className="hidden sm:block absolute -left-4 -bottom-6 max-w-[240px] rotate-[-3deg] border border-[color:var(--color-line)] bg-[color:var(--color-paper)] p-3 sm:p-4 shadow-xl lg:-left-10">
               <div className="font-display text-xl sm:text-2xl leading-none text-[color:var(--color-burgundy)]">"</div>
               <p className="font-display text-xs sm:text-sm italic leading-snug text-[color:var(--color-ink)]">
-                Every story — breaking news or a quiet poem — deserves a careful voice.
+                Every story—breaking news or a quiet poem—deserves a careful voice.
               </p>
               <div className="mt-2 font-hindi text-[10px] sm:text-xs text-[color:var(--color-muted)]">— शब्द-ए-सफ़र</div>
             </div>
@@ -464,7 +464,7 @@ function Stat({ k, v }: { k: string; v: string }) {
 
 function About() {
   return (
-    <section id="about" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
+    <section id="about" className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:py-12">
       <SectionTitle kicker="परिचय · About" title="Words as a way of being." />
       <div className="grid gap-8 md:gap-10 lg:gap-12 md:grid-cols-[1fr_1.2fr]">
         <div>
@@ -485,7 +485,7 @@ function About() {
             My training has been deliberately wide: a newsroom at <span className="font-semibold text-[color:var(--color-ink)]">Dainik Bhaskar</span>,
             an election trail in <span className="font-semibold text-[color:var(--color-ink)]">Seemanchal</span>, literary conversations
             at the <span className="font-semibold text-[color:var(--color-ink)]">Nalanda Literature Festival</span>, and an open mic of my
-            own — <span className="italic">Pratidwani</span>. What ties it together is a love for language, and the conviction
+            own— <span className="italic">Pratidwani</span>. What ties it together is a love for language, and the conviction
             that good communication is, above all, good listening.
           </p>
           <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
@@ -510,7 +510,7 @@ function About() {
 
 function Experience() {
   return (
-    <section id="experience" className="border-y border-[color:var(--color-line)] bg-[color:var(--color-paper-dark)]/50 py-14 sm:py-20 lg:py-24">
+    <section id="experience" className="border-y border-[color:var(--color-line)] bg-[color:var(--color-paper-dark)]/50 py-8 sm:py-10 lg:py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionTitle kicker="अनुभव · Experience" title="A newsroom, a campaign trail, a few poems." />
         <div className="relative">
@@ -558,7 +558,7 @@ function Experience() {
 
 function Education() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
+    <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:py-12">
       <SectionTitle kicker="शिक्षा · Education" title="Where the foundations were laid." />
       <div className="grid gap-3 sm:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {EDUCATION.map((e) => (
@@ -653,16 +653,7 @@ function AchievementFeatureCard({
   );
 }
 
-function AchievementImageReminder() {
-  return (
-    <div className="mt-4 rounded-lg border border-dashed border-[color:var(--color-line)] bg-[color:var(--color-paper-dark)]/50 p-3 text-[11px] sm:text-xs leading-relaxed text-[color:var(--color-muted)]">
-      Add these files in <span className="font-mono text-[color:var(--color-ink)]">public/images</span> to show the actual photos:
-      <span className="mt-1 block font-mono text-[10px] sm:text-[11px]">
-        achievement-gold-medal-portrait.jpg · achievement-gold-medal-ceremony.jpg · achievement-news-topper.jpg · achievement-news-rajgir.jpg
-      </span>
-    </div>
-  );
-}
+
 
 function AchievementHighlights() {
   return (
@@ -681,7 +672,7 @@ function AchievementHighlights() {
             </p>
           </div>
           <p className="rounded-lg border border-[color:var(--color-line)] bg-[color:var(--color-paper-dark)]/50 p-4 font-hindi text-sm sm:text-base leading-relaxed text-[color:var(--color-ink-soft)] lg:max-w-sm">
-            “राजगीर की बेटी को मिला स्वर्ण पदक” — क्षेत्रीय समाचार पत्रों ने इस उपलब्धि को प्रमुखता से प्रकाशित किया।
+            “राजगीर की बेटी को मिला स्वर्ण पदक”—क्षेत्रीय समाचार पत्रों ने इस उपलब्धि को प्रमुखता से प्रकाशित किया।
           </p>
         </div>
 
@@ -691,7 +682,7 @@ function AchievementHighlights() {
           ))}
         </div>
 
-        <AchievementImageReminder />
+        
       </div>
     </div>
   );
@@ -699,7 +690,7 @@ function AchievementHighlights() {
 
 function Writing() {
   return (
-    <section id="writing" className="border-y border-[color:var(--color-line)] bg-[color:var(--color-paper-dark)]/50 py-14 sm:py-20 lg:py-24">
+    <section id="writing" className="border-y border-[color:var(--color-line)] bg-[color:var(--color-paper-dark)]/50 py-8 sm:py-10 lg:py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionTitle kicker="लेखन · Writing & Literature" title="Poems, papers, and a long shelf of reviews." />
 
@@ -765,7 +756,7 @@ function Writing() {
 
 function Projects() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
+    <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:py-12">
       <SectionTitle kicker="परियोजनाएँ · Selected Work" title="Campaigns, scripts, and stories." />
       <div className="grid gap-3 sm:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {PROJECTS.map((p, i) => (
@@ -814,27 +805,27 @@ Gold Medalist in Journalism & Mass Communication (BJMC) with extensive experienc
 ====================================================================
 EDUCATION
 ====================================================================
-• Master's in Mass Communication — Currently Pursuing
-• BJMC (Bachelor of Journalism and Mass Communication) — Gold Medalist (🏅)
-• NHPC Apprenticeship Program — Qualified
-• ConveGenius Fellowship — Qualified
+• Master's in Mass Communication—Currently Pursuing
+• BJMC (Bachelor of Journalism and Mass Communication)—Gold Medalist (🏅)
+• NHPC Apprenticeship Program—Qualified
+• ConveGenius Fellowship—Qualified
 
 ====================================================================
 PROFESSIONAL EXPERIENCE
 ====================================================================
-• STEP AHEAD INDIA — Content Writer & Assistant in Communication Team (Present)
+• STEP AHEAD INDIA—Content Writer & Assistant in Communication Team (Present)
   Leading content strategy, crafting campaign copy, and managing digital narratives across platforms.
 
-• DAINIK BHASKAR — Special Correspondent Trainee
+• DAINIK BHASKAR—Special Correspondent Trainee
   Reported, investigated, and filed news stories for one of India's largest Hindi dailies.
 
-• BIHAR ELECTION CAMPAIGN — PR Executive (Seemanchal Region)
+• BIHAR ELECTION CAMPAIGN—PR Executive (Seemanchal Region)
   Executed on-ground political PR campaigns, media coordination, and narrative strategy.
 
-• CYNCTECH DIGITAL MARKETING — Content Writer cum Anchor
+• CYNCTECH DIGITAL MARKETING—Content Writer cum Anchor
   Scripted and anchored digital content; built voice-driven campaigns across social channels.
 
-• INDEPENDENT FREELANCE — The Kabadiwala & Desi Connect
+• INDEPENDENT FREELANCE—The Kabadiwala & Desi Connect
   Wrote long-form brand content, cultural features, and digital storytelling pieces.
 
 ====================================================================
@@ -988,7 +979,7 @@ Journalist · Poet · Storyteller`;
         </div>
       </div>
 
-      {/* Document view removed — keep download buttons above */}
+      {/* Document view removed—keep download buttons above */}
       <div className="text-sm text-[color:var(--color-ink-soft)]">Use the buttons above to download the Resume or Cover Letter.</div>
     </section>
   );
@@ -1008,7 +999,7 @@ function Digital() {
   ];
 
   return (
-    <section id="digital" className="border-y border-[color:var(--color-line)] bg-[color:var(--color-paper-dark)]/50 py-14 sm:py-20 lg:py-24">
+    <section id="digital" className="border-y border-[color:var(--color-line)] bg-[color:var(--color-paper-dark)]/50 py-8 sm:py-10 lg:py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionTitle kicker="डिजिटल · Digital Presence" title="Find me across the internet." />
 
@@ -1030,7 +1021,7 @@ function Digital() {
                 Nayi Umang
               </h3>
               <p className="mt-2 sm:mt-3 max-w-md text-xs sm:text-sm text-[color:var(--color-paper)]/75">
-                A YouTube channel with <span className="font-semibold">4.8K+ subscribers</span> — conversations, storytelling, and the written word brought to voice.
+                A YouTube channel with <span className="font-semibold">4.8K+ subscribers</span>—conversations, storytelling, and the written word brought to voice.
               </p>
               <div className="mt-4 sm:mt-6 inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-[color:var(--color-gold-soft)] group-hover:gap-3 transition-all">
                 Watch on YouTube
@@ -1086,7 +1077,7 @@ function Contact() {
     setStatus("sending");
     setErrorMsg("");
     try {
-      // FormSubmit AJAX endpoint — first submission triggers a one-time confirmation email
+      // FormSubmit AJAX endpoint—first submission triggers a one-time confirmation email
       // to Sakshi to activate the form; subsequent submissions go straight to her inbox.
       const res = await fetch("https://formsubmit.co/ajax/sinhasakshi861@gmail.com", {
         method: "POST",
@@ -1121,7 +1112,7 @@ function Contact() {
       <SectionTitle kicker="संपर्क · Contact" title="Let's tell a story together." center />
       <p className="mx-auto mb-8 sm:mb-12 max-w-2xl text-center text-sm sm:text-base text-[color:var(--color-ink-soft)] px-4">
         For collaborations, reporting work, PR & campaign consulting, literary reviews,
-        or simply a good conversation about books — the inbox is open.
+        or simply a good conversation about books—the inbox is open.
       </p>
 
       <div className="grid gap-6 sm:gap-8 md:grid-cols-[0.9fr_1.1fr]">
@@ -1245,7 +1236,7 @@ function Contact() {
               <span className="text-lg sm:text-xl">✉️</span>
               <div>
                 <div className="font-semibold">Message sent.</div>
-                <div className="text-emerald-700/80">Thank you — Sakshi will reply to your inbox soon.</div>
+                <div className="text-emerald-700/80">Thank you—Sakshi will reply to your inbox soon.</div>
               </div>
             </div>
           )}
