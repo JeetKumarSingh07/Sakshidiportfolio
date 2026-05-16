@@ -37,7 +37,7 @@ body {
 .font-display { font-family: var(--font-serif); font-optical-sizing: auto; }
 .font-hindi { font-family: var(--font-hindi); }
 
-/* Fluid typography — scales smoothly from phone to ultrawide */
+/* Fluid typography—scales smoothly from phone to ultrawide */
 .text-fluid-hero {
   font-size: clamp(2.25rem, 5vw + 1rem, 6.5rem);
   line-height: 1.02;
@@ -109,6 +109,7 @@ html { scroll-behavior: smooth; }
   to   { opacity: 1; transform: translateY(0); }
 }
 .animate-fade-up { animation: fadeUp 0.7s ease-out both; }
+.delay-120 { animation-delay: 120ms; }
 
 @keyframes drawLine {
   from { transform: scaleX(0); }

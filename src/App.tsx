@@ -1,4 +1,4 @@
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState } from "react";
 
 /* ------------------------------------------------------------------ */
 /* Data                                                                */
@@ -405,7 +405,7 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative animate-fade-up" style={{ animationDelay: "120ms" }}>
+        <div className="relative animate-fade-up delay-120">
           <div className="relative mx-auto aspect-[4/5] w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-lg">
             {/* Decorative frame */}
             <div className="absolute -inset-2 sm:-inset-4 border border-[color:var(--color-burgundy)]/40" />
@@ -1065,47 +1065,8 @@ function Digital() {
 /* Contact                                                             */
 /* ------------------------------------------------------------------ */
 
-type FormStatus = "idle" | "sending" | "success" | "error";
-
 function Contact() {
-  const [status, setStatus] = useState<FormStatus>("idle");
-  const [errorMsg, setErrorMsg] = useState("");
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
-
-  async function onSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus("sending");
-    setErrorMsg("");
-    try {
-      // FormSubmit AJAX endpoint—first submission triggers a one-time confirmation email
-      // to Sakshi to activate the form; subsequent submissions go straight to her inbox.
-      const res = await fetch("https://formsubmit.co/ajax/sinhasakshi861@gmail.com", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          subject: form.subject || "New message from portfolio",
-          message: form.message,
-          _subject: `Portfolio · ${form.subject || "New message"} from ${form.name}`,
-          _template: "table",
-        }),
-      });
-      const data = await res.json().catch(() => ({}));
-      if (res.ok && data.success !== "false") {
-        setStatus("success");
-        setForm({ name: "", email: "", subject: "", message: "" });
-      } else {
-        throw new Error((data as { message?: string }).message || "Something went wrong.");
-      }
-    } catch (err) {
-      setStatus("error");
-      setErrorMsg(err instanceof Error ? err.message : "Couldn't send. Please email directly.");
-    }
-  }
 
   return (
     <section id="contact" className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:py-12">
@@ -1153,6 +1114,7 @@ function Contact() {
         <form
           action="https://formsubmit.co/sinhasakshi861@gmail.com"
           method="POST"
+          onSubmit={() => setForm({ name: "", email: "", subject: "", message: "" })}
           className="relative rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] p-4 sm:p-5 lg:p-6 shadow-sm"
         >
           <input type="hidden" name="_subject" value="Portfolio Contact" />
@@ -1210,42 +1172,14 @@ function Contact() {
             </p>
             <button
               type="submit"
-              disabled={status === "sending"}
               className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-[color:var(--color-burgundy)] px-5 sm:px-6 py-2.5 sm:py-3 text-sm font-medium text-[color:var(--color-paper)] transition-all hover:bg-[color:var(--color-burgundy-dark)] disabled:opacity-60"
             >
-              {status === "sending" ? (
-                <>
-                  <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-                    <path d="M21 12a9 9 0 1 1-6.219-8.56" strokeLinecap="round" />
-                  </svg>
-                  Sending…
-                </>
-              ) : (
-                <>
-                  Send message
-                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </>
-              )}
+              Send message
+              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </button>
           </div>
-
-          {status === "success" && (
-            <div className="mt-4 sm:mt-5 flex items-start gap-3 rounded-md border border-emerald-400/40 bg-emerald-50 p-3 sm:p-4 text-xs sm:text-sm text-emerald-800">
-              <span className="text-lg sm:text-xl">✉️</span>
-              <div>
-                <div className="font-semibold">Message sent.</div>
-                <div className="text-emerald-700/80">Thank you—Sakshi will reply to your inbox soon.</div>
-              </div>
-            </div>
-          )}
-          {status === "error" && (
-            <div className="mt-4 sm:mt-5 rounded-md border border-rose-300 bg-rose-50 p-3 sm:p-4 text-xs sm:text-sm text-rose-800">
-              <div className="font-semibold">Couldn't send.</div>
-              <div>{errorMsg} Please email <a className="underline" href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a> directly.</div>
-            </div>
-          )}
         </form>
       </div>
     </section>
