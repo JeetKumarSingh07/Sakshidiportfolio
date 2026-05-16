@@ -1160,9 +1160,13 @@ function Contact() {
 
         {/* Form */}
         <form
-          onSubmit={onSubmit}
+          action="https://formsubmit.co/sinhasakshi861@gmail.com"
+          method="POST"
           className="relative rounded-xl border border-[color:var(--color-line)] bg-[color:var(--color-paper)] p-4 sm:p-5 lg:p-6 shadow-sm"
         >
+          <input type="hidden" name="_subject" value="Portfolio Contact" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="/" />
           <div className="mb-4 sm:mb-6 flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--color-burgundy)]" />
             <span className="text-[11px] sm:text-xs uppercase tracking-wider text-[color:var(--color-muted)]">Send a message</span>
