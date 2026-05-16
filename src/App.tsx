@@ -12,7 +12,7 @@ const PROFILE = {
   location: "Bhopal, India",
   email: "sinhasakshi861@gmail.com",
   phone: "+91 6205341597",
-  bio: `I am a Gold Medalist in Journalism & Mass Communication, currently pursuing my Master's in Mass Communication. My work lives at the intersection of reporting, poetry, and political storytelling—from the newsroom floor at Dainik Bhaskar to election campaigns across the Seemanchal belt. I write in Hindi and English, review literature (60+ books and counting), host open mics, and believe that every story—whether breaking news or a quiet poem—deserves a careful voice.`,
+  bio: `I am a Gold Medalist in Journalism & Mass Communication, currently pursuing my Master's in Mass Communication. My work lives at the intersection of reporting, poetry, and political storytelling from the newsroom floor at Dainik Bhaskar to election campaigns across the Seemanchal belt. I write in Hindi and English, review literature (60+ books and counting), host open mics, and believe that every story whether breaking news or a quiet poem deserves a careful voice.`,
   intro: `Words have been my compass—through newsrooms, campaign trails, literary festivals and open mics. I report, I write, I anchor, I review, and above all, I listen.`,
 };
 
@@ -88,7 +88,7 @@ const ACHIEVEMENTS = [
   { icon: "📜", title: "Poetry Competition Winner", note: "Recognised for original Hindi poetry." },
   { icon: "🎙️", title: "Yuwa Kavi Manch", note: "Poetry recorded and broadcast on the Young Poets' Forum." },
   { icon: "📚", title: "Nalanda Literature Festival", note: "Associated with literary and media discussions." },
-  { icon: "🎧", title: "Hosted 'Pratidwani'", note: "Curated and hosted the Pratidwani open-mic event." },
+  { icon: "🎧", title: "Hosted 'Pratidhwani'", note: "Curated and hosted the Pratidwani open-mic event." },
   { icon: "📖", title: "60+ Book Reviews", note: "Active reviewer of Hindi literature and contemporary writing." },
   { icon: "🖋️", title: "5+ Published Poems", note: "Across digital and print literary platforms." },
 ];
@@ -485,7 +485,7 @@ function About() {
             My training has been deliberately wide: a newsroom at <span className="font-semibold text-[color:var(--color-ink)]">Dainik Bhaskar</span>,
             an election trail in <span className="font-semibold text-[color:var(--color-ink)]">Seemanchal</span>, literary conversations
             at the <span className="font-semibold text-[color:var(--color-ink)]">Nalanda Literature Festival</span>, and an open mic of my
-            own— <span className="italic">Pratidwani</span>. What ties it together is a love for language, and the conviction
+            own <span className="italic">Pratidhwani</span>. What ties it together is a love for language, and the conviction
             that good communication is, above all, good listening.
           </p>
           <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
@@ -668,7 +668,7 @@ function AchievementHighlights() {
               Gold Medal, Governor's Honor & Press Coverage
             </h3>
             <p className="mt-4 text-sm sm:text-base leading-relaxed text-[color:var(--color-ink-soft)]">
-              A three-part recognition story: academic excellence at LNCT University, official felicitation by the Governor, and regional press coverage celebrating Sakshi's achievement.
+              A three part recognition story: academic excellence at LNCT University, official felicitation by the Governor, and regional press coverage celebrating Sakshi's achievement.
             </p>
           </div>
           <p className="rounded-lg border border-[color:var(--color-line)] bg-[color:var(--color-paper-dark)]/50 p-4 font-hindi text-sm sm:text-base leading-relaxed text-[color:var(--color-ink-soft)] lg:max-w-sm">
@@ -841,7 +841,7 @@ ACHIEVEMENTS & LITERARY INVOLVEMENT
 • University-level Debater & Winner in Nibandh Lekhan (Essay Writing) competitions
 • Winner in Poetry competitions; poetry recorded and broadcast on "Yuwa Kavi Manch"
 • More than 5 poems published across digital and print literary platforms
-• Hosted open mic event "Pratidwani" & participated in Nalanda Literature Festival
+• Hosted open mic event "Pratidhwani" & participated in Nalanda Literature Festival
 • Active book reviewer with over 60 reviews in Hindi literature and contemporary writing
 
 ====================================================================
